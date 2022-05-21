@@ -1,0 +1,13 @@
+# Exclude folders
+node_modules/
+postman-collection/
+test/
+
+# Exclude files
+*.md
+LICENSE
+docker-compose.yaml
+Dockerfile
+
+# Exclude hidden files and folders (includes .dockerignore)
+.*
