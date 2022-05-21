@@ -14,16 +14,16 @@ RUN npm i && npm cache clean --force
 COPY . .
 
 # Default environment variables
-ENV NODE_ENV production
-ENV MONGODB_URL mongodb://127.0.0.1:27017/app_db
-ENV JWT_SECRET=12345
-ENV JWT_TIMEOUT_DURATION="2 hours"
-ENV EMAIL_SMTP_HOST YourSMTPHost
-ENV EMAIL_SMTP_PORT YourSMTPPort
-ENV EMAIL_SMTP_USERNAM YourSMTPUsername
-ENV EMAIL_SMTP_PASSWORD YourSMTPPassword
-# true for 465, false for other ports
-ENV EMAIL_SMTP_SECURE false 
+ENV NODE_ENV=production \
+    MONGODB_URL=mongodb://127.0.0.1:27017/app_db \
+    JWT_SECRET=12345 \
+    JWT_TIMEOUT_DURATION="2 hours" \
+    EMAIL_SMTP_HOST=YourSMTPHost \
+    EMAIL_SMTP_PORT=YourSMTPPort \
+    EMAIL_SMTP_USERNAM=YourSMTPUsername \
+    EMAIL_SMTP_PASSWORD=YourSMTPPassword \
+    EMAIL_SMTP_SECURE=false 
+    # true for 465, false for other ports
 
 # Exposed ports
 EXPOSE 3000
