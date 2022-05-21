@@ -5,8 +5,6 @@ services:
     container_name: node_app
     env_file:
       - .env
-    networks:
-      - app-net
     ports:
       - 3000:3000
     depends_on:
@@ -15,14 +13,9 @@ services:
   mongo_db:
     image: mongo:4.4.14-focal
     container_name: mongo_db
-    networks:
-      - app-net
     volumes:
       - mongo-data:/data/db
     restart: always
 
 volumes:
   mongo-data:
-
-networks:
-  app-net:
